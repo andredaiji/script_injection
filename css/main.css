@@ -1,0 +1,20 @@
+#mainPopup {
+    padding: 0;
+    height: 200px;
+    width: 400px;
+    font-family: Helvetica, Ubuntu, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+input {
+    min-width: 200px;
+}
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Escobs Login",
+  "version": "0.9.0",
+  "manifest_version": 2,
+  "description": "",
+  "icons": {
+    "24": "icons/icon.png",
+    "128": "icons/icon128.png"
+  },
+  "page_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Escobs Login",
+    "default_popup": "src/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "declarativeContent",
+    "tabs",
+    "activeTab",
+    "https://*/*"
+  ]
+}
