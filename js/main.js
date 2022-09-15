@@ -1,8 +1,8 @@
-var readyStateCheckInterval = setInterval(function () {
+const readyStateCheckInterval = setInterval(function () {
     if (document.readyState === "complete") {
         clearInterval(readyStateCheckInterval);
 
-        var cookies = document.cookie,
+        const cookies = document.cookie,
             el_user = document.getElementById('user'),
             el_psw = document.getElementById('psw');
 
@@ -16,22 +16,21 @@ var readyStateCheckInterval = setInterval(function () {
 
             document.getElementById('login').addEventListener('submit', function (e) {
                 e.preventDefault();
-                var user = el_user.value.toUpperCase().trim(),
-                    psw = el_psw.value.toUpperCase().trim();
+                const user = el_user.value.toUpperCase().trim()
+                const psw = el_psw.value.toUpperCase().trim()
 
                 document.cookie = 'user=' + user;
                 document.cookie = 'psw=' + psw;
 
-                chrome.tabs.executeScript({
-                        code: 'var param_user = "' + user + '",param_psw = "' + psw + '";'
-                    },
+                chrome.tabs.executeScript({ code: 'var param_user = "' + user + '",param_psw = "' + psw + '";' },
                     function () {
                         chrome.tabs.executeScript({
                             file: 'js/do_it.js'
                         });
 
                         window.close();
-                    });
+                    }
+                )
             });
         }
     }
